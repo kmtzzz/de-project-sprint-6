@@ -7,7 +7,7 @@ create table STV2024080626__STAGING.group_log
     user_id   int REFERENCES STV2024080626__STAGING.users(id),
     user_id_from int REFERENCES STV2024080626__STAGING.users(id),
     event  varchar(10),
-    datetime timestamp(6)
+    event_dt timestamp(6)
 )
 order by group_id, user_id
 PARTITION BY datetime::date

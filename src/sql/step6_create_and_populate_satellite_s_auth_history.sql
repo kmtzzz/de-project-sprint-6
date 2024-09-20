@@ -19,7 +19,7 @@ INSERT INTO STV2024080626__DWH.s_auth_history(hk_l_user_group_activity, user_id_
 select luga.hk_l_user_group_activity,
        gl.user_id_from,
        gl.event,
-       gl.datetime,
+       gl.event_dt,
        now() as load_dt,
        's3' as load_src
 from STV2024080626__STAGING.group_log as gl
