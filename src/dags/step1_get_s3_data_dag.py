@@ -11,6 +11,8 @@ import boto3.session
 # Read credentials from Airflow variables
 access_key_id = Variable.get("AWS_ACCESS_KEY_ID")
 secret_access_key = Variable.get("AWS_SECRET_ACCESS_KEY")
+
+# move session creation outside function
 session = boto3.session.Session()
 
 def fetch_s3_file(bucket: str, key: str) -> str:
